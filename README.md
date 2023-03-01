@@ -2,6 +2,8 @@
 
 This repository contains code samples to easily interact with our API.
 
+Find out more details about PhotoRoom's API 👉 https://www.photoroom.com/api
+
 ## iOS
 
 You can [download a Playground](https://github.com/PhotoRoom/api-sample-code/tree/main/iOS) that will enable you to easily call our API with a sample image:
