@@ -18,4 +18,26 @@ To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboar
 
 ### Integrate the API
 
-Finally, to integrate our API inside your app, just copy/paste the content of the file [RemoveBackground.swift](https://github.com/PhotoRoom/api-sample-code/blob/main/iOS/RemoveBackground.playground/Sources/RemoveBackground.swift) into your Xcode project.
+To integrate our API inside your app, just copy/paste the content of the file [RemoveBackground.swift](https://github.com/PhotoRoom/api-sample-code/blob/main/iOS/RemoveBackground.playground/Sources/RemoveBackground.swift) into your Xcode project.
+
+Then, depending on whether you are using Swift Concurrency, you can call either:
+```swift
+// with Swift Concurrency
+Task { @MainActor in
+    imageView.image = try await removeBackground(of: yourImage)
+}
+```
+
+or
+
+```swift
+// without Swift Concurrency
+removeBackground(of: yourImage) { result in
+    switch result {
+    case let .success(backgroundRemoved):
+        imageView.image = backgroundRemoved
+    case let .failure(error):
+        // handle the `error`
+    }
+}
+```
