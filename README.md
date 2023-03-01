@@ -2,7 +2,7 @@
 
 This repository contains code samples to easily interact with our API.
 
-Find out more details about PhotoRoom's API 👉 https://www.photoroom.com/api
+More details about PhotoRoom's API 👉 https://www.photoroom.com/api
 
 ## iOS
 
