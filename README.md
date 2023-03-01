@@ -6,7 +6,7 @@ More details about PhotoRoom's API 👉 https://www.photoroom.com/api
 
 ## iOS
 
-### Test the API
+### Option A - Test the API with an Xcode Playground
 
 You can [download a Playground](https://github.com/PhotoRoom/api-sample-code/tree/main/iOS) that will enable you to easily call our API with a sample image:
 
@@ -16,7 +16,7 @@ To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboar
 
 <img width="800" alt="remove_background_api_key" src="https://user-images.githubusercontent.com/5090957/222204959-4ac17671-3444-46c8-bc33-bc4e9c9a7255.png">
 
-### Integrate the API
+### Option B - Integrate the API in your app
 
 To integrate our API inside your app, just copy/paste the content of the file [RemoveBackground.swift](https://github.com/PhotoRoom/api-sample-code/blob/main/iOS/RemoveBackground.playground/Sources/RemoveBackground.swift) into your Xcode project.
 
