@@ -6,6 +6,8 @@ This repository contains code samples to easily interact with our API.
 
 More details about PhotoRoom's API 👉 https://www.photoroom.com/api
 
+Link to the full documentation 👉 https://docs.photoroom.com/docs/api/
+
 ## iOS
 
 ### Option A - Test the API with an Xcode Playground
