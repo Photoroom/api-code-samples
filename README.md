@@ -1,4 +1,4 @@
-<img width="80" alt="App Icon" src="https://user-images.githubusercontent.com/5090957/222391109-fabc0f10-968e-48fa-ba0d-6582c33cbacf.png">
+[<img width="80" alt="App Icon" src="https://user-images.githubusercontent.com/5090957/222391109-fabc0f10-968e-48fa-ba0d-6582c33cbacf.png">](https://www.photoroom.com)
 
 [![join-slack](https://img.shields.io/badge/Slack-Join%20our%20Slack!-green?logo=slack)](https://join.slack.com/t/photoroomapicommunity/shared_invite/zt-1qaqx13t1-zBN85iKzbszl2IG4BakzYQ)
 
