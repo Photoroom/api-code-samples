@@ -1,3 +1,5 @@
+<img width="80" alt="App Icon" src="https://user-images.githubusercontent.com/5090957/222391109-fabc0f10-968e-48fa-ba0d-6582c33cbacf.png">
+
 # PhotoRoom API Code Samples 📸
 
 This repository contains code samples to easily interact with our API.
