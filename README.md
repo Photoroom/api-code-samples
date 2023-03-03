@@ -2,6 +2,7 @@
 
 [![join-slack](https://img.shields.io/badge/Slack-Join%20our%20Slack!-green?logo=slack)](https://join.slack.com/t/photoroomapicommunity/shared_invite/zt-1qaqx13t1-zBN85iKzbszl2IG4BakzYQ)
 ![api-calls](https://img.shields.io/badge/daily%20API%20calls-2M-brightgreen)
+![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
 # PhotoRoom API Code Samples 📸
 
