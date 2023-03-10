@@ -2,6 +2,7 @@
 //  Copyright © 2023 Artizans. All rights reserved.
 //
 
+import CoreImage
 import Foundation
 import UIKit
 
@@ -144,10 +145,11 @@ private extension Data {
 
 private extension UIImage {
     func scaled(by scale: CGFloat) -> UIImage {
-        guard let scaledImage = CIImage(image: self)?.scaled(by: scale) else {
+        guard let scaledCIImage = CIImage(image: self)?.scaled(by: scale),
+              let scaledCGImage = scaledCIImage.toCGImage() else {
             return self
         }
-        return UIImage(ciImage: scaledImage, scale: UIScreen.main.scale, orientation: imageOrientation)
+        return UIImage(cgImage: scaledCGImage)
     }
 
     func scaled(maxDimensions: CGSize) -> CGFloat {
@@ -161,7 +163,7 @@ private extension UIImage {
 
 private extension CIImage {
     func scaled(by scale: CGFloat) -> CIImage {
-        guard scale != 1 else { return self }
+        guard scale < 1 else { return self }
         return applyingFilter(
             "CILanczosScaleTransform",
             parameters: [
@@ -169,5 +171,84 @@ private extension CIImage {
                 kCIInputAspectRatioKey: 1,
             ]
         )
+    }
+
+    func toCGImage(monochrome: Bool = false) -> CGImage? {
+        let colorSpaceName: CFString
+        let format: CIFormat
+        let image: CIImage
+        let bpp: Int
+        let bitmapInfo: UInt32
+        if monochrome {
+            format = .L8
+            colorSpaceName = CGColorSpace.linearGray
+            image = premultiplyingAlpha()
+            bpp = 1
+            bitmapInfo = CGImageAlphaInfo.none.rawValue
+        } else {
+            format = .BGRA8
+            colorSpaceName = CGColorSpace.sRGB
+            image = self
+            bpp = 4
+            bitmapInfo = CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue
+        }
+
+        let w = Int(ceil(extent.width))
+        let h = Int(ceil(extent.height))
+        // Requiring a row alignment on 16 bytes boundaries for extra safety
+        let bpr = 16 * ((w * bpp + 15) / 16)
+
+        guard
+            let bitmapContext = CGContext(
+                data: nil,
+                width: w,
+                height: h,
+                bitsPerComponent: 8,
+                bytesPerRow: bpr,
+                space: CGColorSpace(name: colorSpaceName)!,
+                bitmapInfo: bitmapInfo
+            ),
+            let bitmapData = bitmapContext.data
+        else {
+            return nil
+        }
+
+        let destination = CIRenderDestination(
+            bitmapData: bitmapData,
+            width: w,
+            height: h,
+            bytesPerRow: bpr,
+            format: format
+        )
+        destination.colorSpace = CGColorSpace(name: colorSpaceName)
+
+        guard
+            let task = try? CIContextWrapper().context.startTask(
+                toRender: image,
+                from: extent,
+                to: destination,
+                at: .zero
+            ),
+            (try? task.waitUntilCompleted()) != nil
+        else {
+            return nil
+        }
+
+        return bitmapContext.makeImage()
+    }
+}
+
+private final class CIContextWrapper {
+    let context = CIContextWrapper.context
+
+    private static let context = CIContext(
+        options: [
+            .useSoftwareRenderer: false,
+            .cacheIntermediates: false,
+        ]
+    )
+
+    deinit {
+        context.clearCaches()
     }
 }
