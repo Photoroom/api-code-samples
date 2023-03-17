@@ -50,6 +50,6 @@ removeBackground(of: yourImage) { result in
 }
 ```
 
-You can also watch a short demo 🍿
+You can also watch this short demo 🍿
 
 [![](https://img.youtube.com/vi/aC-dk988XGQ/0.jpg)](https://www.youtube.com/watch?v=aC-dk988XGQ)
