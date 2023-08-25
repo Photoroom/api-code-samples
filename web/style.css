@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Hide the image element initially if there's no source */
+img:not([src]) {
+    display: none;
+}
