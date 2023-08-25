@@ -12,6 +12,42 @@ More details about PhotoRoom's API 👉 https://www.photoroom.com/api
 
 Link to the full documentation 👉 https://docs.photoroom.com/docs/api/
 
+## Web
+
+### Option A - Test the API with a demo webpage
+
+You can clone this repository and locally serve this [demo webpage](https://github.com/PhotoRoom/api-code-samples/blob/vincent/typescript-sample/web/index.html).
+
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/vincent/typescript-sample/web/remove-background.ts).
+
+(you will need to run `tsc` in order to update the JavaScript code)
+
+### Option B - Integrate the API in your project
+
+To integrate our API inside your app, just copy/paste the content of the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/vincent/typescript-sample/web/remove-background.ts) into your Xcode project.
+
+Then, here's an example of how you can call the API:
+
+```javascript
+import { removeBackground } from './remove-background.js';
+
+const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+const displayImage = document.getElementById('displayImage') as HTMLImageElement;
+
+fileInput.addEventListener('change', async () => {
+    const files = fileInput.files;
+    if (files && files.length > 0) {
+        try {
+            const imageBlob = await removeBackground(files[0]); // 👈 API call is here
+            const objectURL = URL.createObjectURL(imageBlob);
+            displayImage.src = objectURL;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+});
+```
+
 ## iOS
 
 ### Option A - Test the API with an Xcode Playground
