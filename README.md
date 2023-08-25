@@ -12,6 +12,112 @@ More details about PhotoRoom's API 👉 https://www.photoroom.com/api
 
 Link to the full documentation 👉 https://docs.photoroom.com/docs/api/
 
+# Table of Content
+
+* [Web](#web)
+* [Node](#node)
+* [Python](#python)
+* [iOS](#ios)
+
+## Web
+
+### Option A - Test the API with a demo webpage
+
+You can clone this repository and locally serve this [demo webpage](https://github.com/PhotoRoom/api-code-samples/blob/main/web/index.html).
+
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/main/web/remove-background.ts).
+
+(you will need to run `tsc` in order to update the JavaScript code)
+
+### Option B - Integrate the API in your project
+
+To integrate our API inside your website, just copy/paste the content of the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/main/web/remove-background.ts) into your project.
+
+Then, here's an example of how you can call the API:
+
+```javascript
+import { removeBackground } from './remove-background.js';
+
+const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+const displayImage = document.getElementById('displayImage') as HTMLImageElement;
+
+fileInput.addEventListener('change', async () => {
+    const files = fileInput.files;
+    if (files && files.length > 0) {
+        try {
+            const imageBlob = await removeBackground(files[0]); // 👈 API call is here
+            const objectURL = URL.createObjectURL(imageBlob);
+            displayImage.src = objectURL;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+});
+```
+
+## Node
+
+### Option A - Test the API in the Terminal
+
+You can clone this repository and run these two commands in the Terminal:
+
+```shell
+$ cd api-code-samples/Node
+$ node demo.js
+```
+
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.js](https://github.com/PhotoRoom/api-code-samples/blob/main/Node/remove-background.js).
+
+### Option B - Integrate the API in your project
+
+To integrate our API inside your project, just copy/paste the content of the file [remove-background.js](https://github.com/PhotoRoom/api-code-samples/blob/main/Node/remove-background.js) into your Node project.
+
+Then, here's an example of how you can call the API:
+
+```javascript
+const removeBackground = require('./remove-background');
+
+const imagePath = './path/to/your/image.jpg';
+const savePath = './path/where/you/want/to/save/response.jpg';
+
+removeBackground(imagePath, savePath)
+    .then(message => {
+        console.log(message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+## Python
+
+### Option A - Test the API in the Terminal
+
+You can clone this repository and run these two commands in the Terminal:
+
+```shell
+$ cd api-code-samples/Python
+$ python demo.py
+```
+
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove_background.py](https://github.com/PhotoRoom/api-code-samples/blob/main/Python/remove_background.py).
+
+### Option B - Integrate the API in your project
+
+To integrate our API inside your project, just copy/paste the content of the file [remove_background.py](https://github.com/PhotoRoom/api-code-samples/blob/main/Python/remove_background.py) into your Python project.
+
+Then, here's an example of how you can call the API:
+
+```python
+from remove_background import remove_background
+
+# Example usage
+input_path = "test.jpg"
+output_path = "result.png"
+
+remove_background(input_path, output_path)
+```
+
 ## iOS
 
 ### Option A - Test the API with an Xcode Playground
