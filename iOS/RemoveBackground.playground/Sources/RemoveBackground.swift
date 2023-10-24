@@ -7,7 +7,6 @@ import Foundation
 import UIKit
 
 // MARK: Remove Background API
-
 #error("Please input your apiKey below")
 private let apiKey: String = "YOUR_API_KEY"
 
@@ -76,7 +75,7 @@ public func removeBackground(
             completionHandler(.failure(.serverError))
             return
         }
-        completionHandler(.success(decodedImage))
+        completionHandler(.success(decodedImage.rotateImage(initialOrientation: image.imageOrientation)))
     })
     task.resume()
 }
@@ -250,5 +249,22 @@ private final class CIContextWrapper {
 
     deinit {
         context.clearCaches()
+    }
+}
+
+private extension UIImage {
+    /// Restore the image to its initial orientation if needed
+    /// - Parameter initialOrientation: orientation of the initial image
+    /// - Returns: the image correctly oriented
+    func rotateImage(initialOrientation: UIImage.Orientation) -> UIImage {
+        if initialOrientation == UIImage.Orientation.up {
+            return self
+        }
+
+        guard let cgImage = cgImage else {
+            return self
+        }
+
+        return UIImage(cgImage: cgImage, scale: 1, orientation: initialOrientation)
     }
 }
