@@ -145,8 +145,8 @@ private extension Data {
 
 private extension UIImage {
     func scaled(by scale: CGFloat) -> UIImage {
-        guard let scaledCIImage = CIImage(image: self)?.scaled(by: scale),
-              let scaledCGImage = scaledCIImage.toCGImage() else {
+        guard let ciImage = CIImage(image: self, options: [.applyOrientationProperty: true]),
+              let scaledCGImage = ciImage.scaled(by: scale).toCGImage() else {
             return self
         }
         return UIImage(cgImage: scaledCGImage)
