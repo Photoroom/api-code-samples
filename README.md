@@ -4,11 +4,11 @@
 ![api-calls](https://img.shields.io/badge/daily%20API%20calls-2M-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
-# PhotoRoom API Code Samples 📸
+# Photoroom API Code Samples 📸
 
 This repository contains code samples to easily interact with our API.
 
-More details about PhotoRoom's API 👉 https://www.photoroom.com/api
+More details about Photoroom's API 👉 https://www.photoroom.com/api
 
 Link to the full documentation 👉 https://docs.photoroom.com/docs/api/
 
@@ -23,15 +23,15 @@ Link to the full documentation 👉 https://docs.photoroom.com/docs/api/
 
 ### Option A - Test the API with a demo webpage
 
-You can clone this repository and locally serve this [demo webpage](https://github.com/PhotoRoom/api-code-samples/blob/main/web/index.html).
+You can clone this repository and locally serve this [demo webpage](https://github.com/Photoroom/api-code-samples/blob/main/web/index.html).
 
-To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/main/web/remove-background.ts).
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.ts](https://github.com/Photoroom/api-code-samples/blob/main/web/remove-background.ts).
 
 (you will need to run `tsc` in order to update the JavaScript code)
 
 ### Option B - Integrate the API in your project
 
-To integrate our API inside your website, just copy/paste the content of the file [remove-background.ts](https://github.com/PhotoRoom/api-code-samples/blob/main/web/remove-background.ts) into your project.
+To integrate our API inside your website, just copy/paste the content of the file [remove-background.ts](https://github.com/Photoroom/api-code-samples/blob/main/web/remove-background.ts) into your project.
 
 Then, here's an example of how you can call the API:
 
@@ -66,11 +66,11 @@ $ cd api-code-samples/Node
 $ node demo.js
 ```
 
-To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.js](https://github.com/PhotoRoom/api-code-samples/blob/main/Node/remove-background.js).
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove-background.js](https://github.com/Photoroom/api-code-samples/blob/main/Node/remove-background.js).
 
 ### Option B - Integrate the API in your project
 
-To integrate our API inside your project, just copy/paste the content of the file [remove-background.js](https://github.com/PhotoRoom/api-code-samples/blob/main/Node/remove-background.js) into your Node project.
+To integrate our API inside your project, just copy/paste the content of the file [remove-background.js](https://github.com/Photoroom/api-code-samples/blob/main/Node/remove-background.js) into your Node project.
 
 Then, here's an example of how you can call the API:
 
@@ -100,11 +100,11 @@ $ cd api-code-samples/Python
 $ python demo.py
 ```
 
-To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove_background.py](https://github.com/PhotoRoom/api-code-samples/blob/main/Python/remove_background.py).
+To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboard) and add it to the file [remove_background.py](https://github.com/Photoroom/api-code-samples/blob/main/Python/remove_background.py).
 
 ### Option B - Integrate the API in your project
 
-To integrate our API inside your project, just copy/paste the content of the file [remove_background.py](https://github.com/PhotoRoom/api-code-samples/blob/main/Python/remove_background.py) into your Python project.
+To integrate our API inside your project, just copy/paste the content of the file [remove_background.py](https://github.com/Photoroom/api-code-samples/blob/main/Python/remove_background.py) into your Python project.
 
 Then, here's an example of how you can call the API:
 
@@ -122,7 +122,7 @@ remove_background(input_path, output_path)
 
 ### Option A - Test the API with an Xcode Playground
 
-You can [download a Playground](https://github.com/PhotoRoom/api-sample-code/tree/main/iOS) that will enable you to easily call our API with a sample image:
+You can [download a Playground](https://github.com/Photoroom/api-sample-code/tree/main/iOS) that will enable you to easily call our API with a sample image:
 
 <img width="800" alt="remove_background_playground" src="https://user-images.githubusercontent.com/5090957/222199663-cf6a243a-2f35-4cc6-a98f-dfbeff5780cb.png">
 
@@ -132,7 +132,7 @@ To make it work, just [get your `apiKey`](https://app.photoroom.com/api-dashboar
 
 ### Option B - Integrate the API in your app
 
-To integrate our API inside your app, just copy/paste the content of the file [RemoveBackground.swift](https://github.com/PhotoRoom/api-sample-code/blob/main/iOS/RemoveBackground.playground/Sources/RemoveBackground.swift) into your Xcode project.
+To integrate our API inside your app, just copy/paste the content of the file [RemoveBackground.swift](https://github.com/Photoroom/api-sample-code/blob/main/iOS/RemoveBackground.playground/Sources/RemoveBackground.swift) into your Xcode project.
 
 Then, depending on whether you are using Swift Concurrency, you can call either:
 ```swift
