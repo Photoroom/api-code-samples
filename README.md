@@ -1,4 +1,4 @@
-[<img width="80" alt="App Icon" src="https://user-images.githubusercontent.com/5090957/222391109-fabc0f10-968e-48fa-ba0d-6582c33cbacf.png">](https://www.photoroom.com)
+[<img width="80" alt="photoroom-logo" src="https://github.com/user-attachments/assets/60146051-666c-4551-9483-5fa266d6306c" />](https://www.photoroom.com)
 
 [![join-slack](https://img.shields.io/badge/Slack-Join%20our%20Slack!-green?logo=slack)](https://join.slack.com/t/photoroomapicommunity/shared_invite/zt-1tlv7t2nq-6IgjksQObyCMW6rPKCksjg)
 ![api-calls](https://img.shields.io/badge/daily%20API%20calls-2M-brightgreen)
